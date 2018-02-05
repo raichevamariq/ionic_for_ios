@@ -1,0 +1,31 @@
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Storage } from '@ionic/storage';
+
+
+
+@Injectable()
+export class ListProvider {
+
+
+
+constructor(public http: HttpClient,public storage : Storage) {
+  console.log('Hello RestServiceProvider Provider');
+}
+
+getList() {
+
+
+
+
+ 
+  return new Promise(resolve => {
+    this.http.get("http://prodmobile.traxxeo.com/servlet/searchVehicle?userId=101001&searchValue=&person=1&vehicle=1&object=1").subscribe(data => {
+      resolve(data);
+    }, err => {
+      console.log(err);
+    });
+  });
+}
+
+}

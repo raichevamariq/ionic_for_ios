@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\user\Desktop\traxxeoApp\platforms\android\libs\sqlite-connector.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="76169ab23a4f939925491c6fe186749da5a56ee9">
+        <dex dex="C:\Users\user\Desktop\traxxeoApp\platforms\android\build\intermediates\pre-dexed\debug\sqlite-connector_54b768e649a771911f084060ed89688404d6cd1b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\user\Desktop\traxxeoApp\platforms\android\build\intermediates\exploded-aar\org.apache.cordova\CordovaLib\6.2.3\debug\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="cd2af1a7180eb6427b58d868cd841d8212aca77e">
+        <dex dex="C:\Users\user\Desktop\traxxeoApp\platforms\android\build\intermediates\pre-dexed\debug\CordovaLib-6.2.3-debug_2eab8aca288fecdc9d1a271b5825aa18e95c5a7c.jar" />
+    </item>
+
+</items>

@@ -1,0 +1,953 @@
+webpackJsonp([5],{
+
+/***/ 107:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DetailsPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_details_details__ = __webpack_require__(162);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(18);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+/**
+ * Generated class for the DetailsPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var DetailsPage = (function () {
+    function DetailsPage(navCtrl, detailsProvider) {
+        this.navCtrl = navCtrl;
+        this.detailsProvider = detailsProvider;
+        this.selectedItem = window.localStorage.getItem('selectedId');
+        this.getDetails();
+    }
+    DetailsPage.prototype.getUndefined = function (val) {
+        return typeof val;
+        ;
+    };
+    DetailsPage.prototype.getDetails = function () {
+        var _this = this;
+        this.detailsProvider.getDetails()
+            .subscribe(function (data) {
+            _this.item = data;
+            console.log("Response", _this.item);
+            _this.item.event_img = window.localStorage.getItem('event_img');
+            _this.item.category_img = window.localStorage.getItem('category_img');
+            _this.item.type = window.localStorage.getItem('type');
+        });
+        console.log('Page component is ready : ', window.localStorage.getItem('person'));
+    };
+    DetailsPage.prototype.ionViewWillEnter = function () {
+        this.getDetails();
+    };
+    DetailsPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-details',template:/*ion-inline-start:"C:\Users\user\Desktop\ionic_traxxeo\src\pages\details\details.html"*/`<!--\n  Generated template for the DetailsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<!-- <ion-header>\n\n  <ion-navbar>\n    <ion-title>Details</ion-title>\n  </ion-navbar>\n\n</ion-header> -->\n\n<ion-content padding>\n <my-header></my-header>\n    <ion-navbar padding>\n        <ion-title style="margin-top: 5%;">Details</ion-title>\n      </ion-navbar>\n\n <div class="row" *ngIf=" selectedItem!=\'\' &&  item?.type == \'person\' " >\n\n    <div class="row">\n      <div class="col-15 col-img" >\n        <img width="40" height = "40" src="assets/img/person_categories/{{ item?.category_img }}.png " />\n      </div>\n\n      <div class = "col-70 col-list">\n        <!--<div style=" font-family: \'Roboto\', sans-serif;\n        font-size:17px;\n        color:#00335E ;\n        font-weight:500;">-->\n        <div id="heading">{{item?.first_name}} {{ item?.last_name}}</div>\n        <div id="blueText">{{item?.company_name}} {{ item?.category_name}}</div>\n        <div id="grayText">{{item?.address}}</div>\n\n        <div id="date-ID"><img style="margin-right:10px"  width="15" height="15" src = "assets/img/events/{{ item?.event_img }}.png" /> {{ item?.date}} </div>\n\n      </div>\n    </div>\n\n    <div class="row detailS">\n    	<div class="row">\n    		<div class="col-50 detailsLeft" id="grayText">Company name:</div>\n    		<div class="col-50 detailsRight" id="blueText">{{item?.company_name}}</div>\n    	</div>\n    	<div class="row">\n    		<div class="col-50 detailsLeft" id="grayText">NISS/LIMOSA</div>\n    		<div class="col-50 detailsRight" id="blueText">{{item?.niss}} / {{item?.limosa}}</div>\n    	</div>\n    	<div class="row">\n    		<div class="col-50 detailsLeft" id="grayText">Phone:</div>\n    		<div class="col-50 detailsRight" id="blueText">{{item?.phone}}</div>\n    	</div>\n    	<div class="row">\n    		<div class="col-50 detailsLeft" id="grayText">Home Address:</div>\n    		<div class="col-50 detailsRight" id="blueText">{{item?.home_address}}</div>\n      </div>\n      <div class="row">\n    	  <div class="col-50 detailsLeft" id="grayText">Comment:</div>\n        <div class="col-50 detailsRight" id="blueText">{{item?.comment}}</div>\n      </div>\n    </div>\n  </div>\n\n{{  selectedItem }}\n  <div class="row" *ngIf=" selectedItem!=\'\' &&  item?.type  == \'vehicle\'" >\n    <div class="row">\n      <div class="col-15 col-img">\n        <img width="40" height="40" src="assets/img/veh_categories/{{ item?.category_img }}.png " />\n      </div>\n      <div class="col-70 col-list">\n\n      <!--<div style=" font-family: \'Roboto\', sans-serif;\n        font-size:17px;\n        color:#00335E ;\n        font-weight:500;">-->\n      <div id="heading">{{item?.name}}</div>\n      <div id="blueText">{{item?.brand}} {{ item?.model}}</div>\n      <div id="grayText">{{item?.address}}</div>\n\n      <div id="date-ID"><img style="margin-right:10px" onerror="hide_img(this)"  width="15" height="15" src = "assets/img/events/{{ item?.event_img }}.png" /> {{ item?.date}} {{item?.poi}} </div>\n\n      </div>\n    </div>\n\n    <div class="row detailS">\n      <div class="row">\n        <div class="col-50 detailsLeft" id="grayText">Company name:</div>\n        <div class="col-50 detailsRight" id="blueText">{{item?.company_name}}</div>\n      </div>\n      <div class="row">\n        <div class="col-50 detailsLeft" id="grayText">Colour:</div>\n        <div class="col-50 detailsRight" id="blueText">{{item?.color}}</div>\n      </div>\n      <div class="row">\n        <div class="col-50 detailsLeft" id="grayText">Chassis number:</div>\n        <div class="col-50 detailsRight" id="blueText">{{item?.chassis_nr}}</div>\n      </div>\n      <div class="row">\n        <div class="col-50 detailsLeft" id="grayText">Last Badge:</div>\n        <div class="col-50 detailsRight" id="blueText">{{item?.last_badger}}</div>\n      </div>\n      <div class="row">\n    	  <div class="col-50 detailsLeft" id="grayText">Comment:</div>\n        <div class="col-50 detailsRight" id="blueText">{{item?.comment}}</div>\n      </div>\n    </div>\n  </div>\n\n</ion-content>\n`/*ion-inline-end:"C:\Users\user\Desktop\ionic_traxxeo\src\pages\details\details.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1__providers_details_details__["a" /* DetailsProvider */]])
+    ], DetailsPage);
+    return DetailsPage;
+}());
+
+//# sourceMappingURL=details.js.map
+
+/***/ }),
+
+/***/ 108:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SettingsPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__list_list__ = __webpack_require__(52);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+// import { Storage } from '@ionic/storage';
+//
+/**
+ * Generated class for the SettingsPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var SettingsPage = (function () {
+    function SettingsPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.checkedPerson = true;
+        this.checkedObject = true;
+        this.checkedVehicle = true;
+    }
+    SettingsPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad SettingsPage');
+    };
+    SettingsPage.prototype.gotoListPage = function () {
+        var person;
+        var vehicle;
+        var object;
+        if (this.checkedPerson === true) {
+            person = 1;
+        }
+        else {
+            person = 0;
+        }
+        if (this.checkedObject === true) {
+            object = 1;
+        }
+        else {
+            object = 0;
+        }
+        if (this.checkedVehicle === true) {
+            vehicle = 1;
+        }
+        else {
+            vehicle = 0;
+        }
+        var filter = {
+            "person": person,
+            "vehicle": vehicle,
+            "object": object
+        };
+        console.log("Filter Person " + filter.person);
+        console.log("Filter Object " + filter.object);
+        console.log("Filter Vehicle " + filter.vehicle);
+        console.log("json", JSON.stringify(filter));
+        window.localStorage.setItem(window.localStorage.getItem("userId"), JSON.stringify(filter));
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__list_list__["a" /* ListPage */]);
+    };
+    SettingsPage.prototype.ionViewWillEnter = function () {
+        console.log('ionViewWillEnter SettingsPage');
+    };
+    SettingsPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-settings',template:/*ion-inline-start:"C:\Users\user\Desktop\ionic_traxxeo\src\pages\settings\settings.html"*/`<!--\n  Generated template for the SettingsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n\n<ion-content padding>\n <my-header></my-header>\n  <ion-navbar padding>\n    <ion-title>Settings</ion-title>\n  </ion-navbar>\n\n  <ion-list >\n    <ion-item>\n      <ion-thumbnail>\n          <ion-img width="auto" height="auto" class="img-settings" src="assets/img/user.png"></ion-img>\n        </ion-thumbnail>\n    </ion-item>\n    <ion-item>\n      <ion-label>Person</ion-label>\n      <ion-checkbox color="primary" [(ngModel)]="checkedPerson"></ion-checkbox>\n    </ion-item>\n    <ion-item>\n      <ion-label>Object</ion-label>\n      <ion-checkbox color="primary" [(ngModel)]="checkedObject"></ion-checkbox>\n    </ion-item>\n    <ion-item>\n      <ion-label>Vehicle</ion-label>\n      <ion-checkbox color="primary" [(ngModel)]="checkedVehicle"></ion-checkbox>\n    </ion-item>\n\n  </ion-list>\n\n  <button small full color="default" (click)="gotoListPage()" name="ListPage" >Apply Settings</button>\n</ion-content>\n`/*ion-inline-end:"C:\Users\user\Desktop\ionic_traxxeo\src\pages\settings\settings.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
+    ], SettingsPage);
+    return SettingsPage;
+}());
+
+//# sourceMappingURL=settings.js.map
+
+/***/ }),
+
+/***/ 120:
+/***/ (function(module, exports) {
+
+function webpackEmptyAsyncContext(req) {
+	// Here Promise.resolve().then() is used instead of new Promise() to prevent
+	// uncatched exception popping up in devtools
+	return Promise.resolve().then(function() {
+		throw new Error("Cannot find module '" + req + "'.");
+	});
+}
+webpackEmptyAsyncContext.keys = function() { return []; };
+webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
+module.exports = webpackEmptyAsyncContext;
+webpackEmptyAsyncContext.id = 120;
+
+/***/ }),
+
+/***/ 161:
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"../pages/details/details.module": [
+		295,
+		4
+	],
+	"../pages/list/list.module": [
+		296,
+		3
+	],
+	"../pages/login/login.module": [
+		297,
+		2
+	],
+	"../pages/map/map.module": [
+		299,
+		1
+	],
+	"../pages/settings/settings.module": [
+		298,
+		0
+	]
+};
+function webpackAsyncContext(req) {
+	var ids = map[req];
+	if(!ids)
+		return Promise.reject(new Error("Cannot find module '" + req + "'."));
+	return __webpack_require__.e(ids[1]).then(function() {
+		return __webpack_require__(ids[0]);
+	});
+};
+webpackAsyncContext.keys = function webpackAsyncContextKeys() {
+	return Object.keys(map);
+};
+webpackAsyncContext.id = 161;
+module.exports = webpackAsyncContext;
+
+/***/ }),
+
+/***/ 162:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DetailsProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(264);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var DetailsProvider = (function () {
+    function DetailsProvider(http, storage) {
+        this.http = http;
+        this.storage = storage;
+    }
+    DetailsProvider.prototype.getDetails = function () {
+        var type = window.localStorage.getItem("type");
+        var event_id = window.localStorage.getItem("selectedId");
+        var url = "";
+        if (type == "person") {
+            url = "http://prodmobile.traxxeo.com/servlet/showPersonDetails?event_id=" + event_id + "&userId=101001";
+        }
+        else {
+            url = "http://prodmobile.traxxeo.com/servlet/showDetails?event_id=" + event_id + "&userId=101001";
+        }
+        console.log('URL:', url);
+        var response = this.http.get(url);
+        return response;
+    };
+    DetailsProvider = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]])
+    ], DetailsProvider);
+    return DetailsProvider;
+}());
+
+//# sourceMappingURL=details.js.map
+
+/***/ }),
+
+/***/ 163:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ListProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(47);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var ListProvider = (function () {
+    function ListProvider(http, storage) {
+        this.http = http;
+        this.storage = storage;
+        console.log('Hello RestServiceProvider Provider');
+    }
+    ListProvider.prototype.getList = function (searchValue) {
+        var _this = this;
+        var filter = JSON.parse(localStorage.getItem(localStorage.getItem("userId")));
+        var person;
+        var vehicle;
+        var object;
+        console.log("filter " + filter);
+        if (localStorage.getItem(localStorage.getItem("userId")) != null) {
+            person = filter.person;
+            object = filter.object;
+            vehicle = filter.vehicle;
+        }
+        else {
+            person = 1;
+            vehicle = 1;
+            object = 1;
+        }
+        var userId = window.localStorage.getItem("userId");
+        var url = "http://prodmobile.traxxeo.com/servlet/searchVehicle?userId=" + userId + "&searchValue=" + searchValue + "&person=" + person + "&vehicle=" + vehicle + "&object=" + object;
+        console.log("URL list", url);
+        return new Promise(function (resolve) {
+            _this.http.get(url).subscribe(function (data) {
+                resolve(data);
+            }, function (err) {
+                console.log(err);
+            });
+        });
+    };
+    ListProvider = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]])
+    ], ListProvider);
+    return ListProvider;
+}());
+
+//# sourceMappingURL=list.js.map
+
+/***/ }),
+
+/***/ 164:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/*
+  Generated class for the LoginProvider provider.
+
+  See https://angular.io/guide/dependency-injection for more info on providers
+  and Angular DI.
+*/
+var LoginProvider = (function () {
+    function LoginProvider(http) {
+        this.http = http;
+        console.log('Hello LoginProvider Provider');
+    }
+    LoginProvider.prototype.login = function (username, password) {
+        var _this = this;
+        var url = "http://prodmobile.traxxeo.com/servlet/loginServlet?username=" + username + "&password=" + password;
+        //var response = this.http.get(url);
+        //return response;
+        return new Promise(function (resolve) {
+            _this.http.get(url).subscribe(function (data) {
+                resolve(data);
+            }, function (err) {
+                console.log("Error", err.error.text);
+                alert("Invalid credentials");
+            });
+        });
+    };
+    LoginProvider = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */]])
+    ], LoginProvider);
+    return LoginProvider;
+}());
+
+//# sourceMappingURL=login.js.map
+
+/***/ }),
+
+/***/ 208:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MapPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var MapPage = (function () {
+    function MapPage() {
+    }
+    MapPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-map',template:/*ion-inline-start:"C:\Users\user\Desktop\ionic_traxxeo\src\pages\map\map.html"*/`<!--\n  Generated template for the MapPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>map</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n<div id="map_canvas"></div>\n\n</ion-content>\n`/*ion-inline-end:"C:\Users\user\Desktop\ionic_traxxeo\src\pages\map\map.html"*/,
+        }),
+        __metadata("design:paramtypes", [])
+    ], MapPage);
+    return MapPage;
+}());
+
+//# sourceMappingURL=map.js.map
+
+/***/ }),
+
+/***/ 209:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(210);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(231);
+
+
+Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
+//# sourceMappingURL=main.js.map
+
+/***/ }),
+
+/***/ 231:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(282);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_my_header_my_header__ = __webpack_require__(290);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_about_about__ = __webpack_require__(291);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_login_login__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_contact_contact__ = __webpack_require__(292);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_tabs_tabs__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_list_list__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_map_map__ = __webpack_require__(208);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_details_details__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_settings_settings__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_native_google_maps__ = __webpack_require__(293);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__ionic_native_status_bar__ = __webpack_require__(204);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__ionic_native_splash_screen__ = __webpack_require__(207);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__providers_rest_rest__ = __webpack_require__(294);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__providers_list_list__ = __webpack_require__(163);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__providers_details_details__ = __webpack_require__(162);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__providers_login_login__ = __webpack_require__(164);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var AppModule = (function () {
+    function AppModule() {
+    }
+    AppModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */],
+                __WEBPACK_IMPORTED_MODULE_7__pages_about_about__["a" /* AboutPage */],
+                __WEBPACK_IMPORTED_MODULE_9__pages_contact_contact__["a" /* ContactPage */],
+                __WEBPACK_IMPORTED_MODULE_6__components_my_header_my_header__["a" /* MyHeaderComponent */],
+                __WEBPACK_IMPORTED_MODULE_10__pages_tabs_tabs__["a" /* TabsPage */],
+                __WEBPACK_IMPORTED_MODULE_11__pages_list_list__["a" /* ListPage */],
+                __WEBPACK_IMPORTED_MODULE_13__pages_details_details__["a" /* DetailsPage */],
+                __WEBPACK_IMPORTED_MODULE_14__pages_settings_settings__["a" /* SettingsPage */],
+                __WEBPACK_IMPORTED_MODULE_8__pages_login_login__["a" /* LoginPage */],
+                __WEBPACK_IMPORTED_MODULE_12__pages_map_map__["a" /* MapPage */]
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
+                __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["b" /* HttpClientModule */],
+                __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */], {}, {
+                    links: [
+                        { loadChildren: '../pages/details/details.module#DetailsPageModule', name: 'DetailsPage', segment: 'details', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/list/list.module#ListPageModule', name: 'ListPage', segment: 'list', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/settings/settings.module#SettingsPageModule', name: 'SettingsPage', segment: 'settings', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/map/map.module#MapPageModule', name: 'MapPage', segment: 'map', priority: 'low', defaultHistory: [] }
+                    ]
+                }),
+                __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["a" /* IonicStorageModule */].forRoot()
+            ],
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* IonicApp */]],
+            entryComponents: [
+                __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */],
+                __WEBPACK_IMPORTED_MODULE_7__pages_about_about__["a" /* AboutPage */],
+                __WEBPACK_IMPORTED_MODULE_9__pages_contact_contact__["a" /* ContactPage */],
+                __WEBPACK_IMPORTED_MODULE_6__components_my_header_my_header__["a" /* MyHeaderComponent */],
+                __WEBPACK_IMPORTED_MODULE_10__pages_tabs_tabs__["a" /* TabsPage */],
+                __WEBPACK_IMPORTED_MODULE_11__pages_list_list__["a" /* ListPage */],
+                __WEBPACK_IMPORTED_MODULE_13__pages_details_details__["a" /* DetailsPage */],
+                __WEBPACK_IMPORTED_MODULE_14__pages_settings_settings__["a" /* SettingsPage */],
+                __WEBPACK_IMPORTED_MODULE_8__pages_login_login__["a" /* LoginPage */],
+                __WEBPACK_IMPORTED_MODULE_12__pages_map_map__["a" /* MapPage */]
+            ],
+            providers: [
+                __WEBPACK_IMPORTED_MODULE_16__ionic_native_status_bar__["a" /* StatusBar */],
+                __WEBPACK_IMPORTED_MODULE_17__ionic_native_splash_screen__["a" /* SplashScreen */],
+                { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["b" /* IonicErrorHandler */] },
+                __WEBPACK_IMPORTED_MODULE_18__providers_rest_rest__["a" /* RestProvider */],
+                __WEBPACK_IMPORTED_MODULE_19__providers_list_list__["a" /* ListProvider */],
+                __WEBPACK_IMPORTED_MODULE_20__providers_details_details__["a" /* DetailsProvider */],
+                __WEBPACK_IMPORTED_MODULE_15__ionic_native_google_maps__["a" /* GoogleMaps */],
+                __WEBPACK_IMPORTED_MODULE_21__providers_login_login__["a" /* LoginProvider */]
+            ]
+        })
+    ], AppModule);
+    return AppModule;
+}());
+
+//# sourceMappingURL=app.module.js.map
+
+/***/ }),
+
+/***/ 282:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(204);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(207);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_tabs_tabs__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_login_login__ = __webpack_require__(53);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var MyApp = (function () {
+    function MyApp(platform, statusBar, splashScreen) {
+        var _this = this;
+        platform.ready().then(function () {
+            //window.localStorage.setItem("userId","");
+            console.log("USER_ID", typeof (window.localStorage.getItem("userId")));
+            window.localStorage.setItem('selectedId', "");
+            if (window.localStorage.getItem("userId") != "" && window.localStorage.getItem("userId") != null) {
+                console.log("E ko");
+                _this.rootPage = __WEBPACK_IMPORTED_MODULE_4__pages_tabs_tabs__["a" /* TabsPage */];
+            }
+            else {
+                _this.rootPage = __WEBPACK_IMPORTED_MODULE_5__pages_login_login__["a" /* LoginPage */];
+            }
+            // Okay, so the platform is ready and our plugins are available.
+            // Here you can do any higher level native things you might need.
+            statusBar.styleDefault();
+            splashScreen.hide();
+        });
+    }
+    MyApp = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\user\Desktop\ionic_traxxeo\src\app\app.html"*/`\n\n\n\n\n<ion-nav [root]="rootPage"></ion-nav>\n`/*ion-inline-end:"C:\Users\user\Desktop\ionic_traxxeo\src\app\app.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
+    ], MyApp);
+    return MyApp;
+}());
+
+//# sourceMappingURL=app.component.js.map
+
+/***/ }),
+
+/***/ 290:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyHeaderComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_login_login__ = __webpack_require__(53);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+/**
+ * Generated class for the MyHeaderComponent component.
+ *
+ * See https://angular.io/api/core/Component for more info on Angular
+ * Components.
+ */
+var MyHeaderComponent = (function () {
+    function MyHeaderComponent(navCtrl) {
+        this.navCtrl = navCtrl;
+        this.myDate = new Date().toString();
+        console.log('Hello MyHeaderComponent Component');
+        this.text = 'Hello World';
+    }
+    MyHeaderComponent.prototype.logout = function () {
+        window.localStorage.setItem("userId", "");
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__pages_login_login__["a" /* LoginPage */]);
+    };
+    MyHeaderComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'my-header',template:/*ion-inline-start:"C:\Users\user\Desktop\ionic_traxxeo\src\components\my-header\my-header.html"*/`<!-- Generated template for the MyHeaderComponent component -->\n\n<ion-navbar  >\n<div class="bar bar-header bar-dark" style="display: flex;  align-items: flex-start; flex-wrap: wrap; height: 40px;">\n  <div style="align-content:flex-start; width: 30%;">\n    <img  width="40" height="40" src="assets/img/traxx_left.png" />\n  </div>\n  <div style="width: 40%; align-content: center;font-size: 16px; ">\n {{ myDate }}\n  </div>\n  <div style="width: 30%; align-content: flex-end">\n    <ion-buttons>\n      <button (click)="logout()" style="float: right;margin-right:0px; background: transparent;"><img  width="auto" height="auto" src="assets/img/logout_img.png"></button>\n    </ion-buttons>\n  </div>\n</div>\n</ion-navbar>\n`/*ion-inline-end:"C:\Users\user\Desktop\ionic_traxxeo\src\components\my-header\my-header.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
+    ], MyHeaderComponent);
+    return MyHeaderComponent;
+}());
+
+//# sourceMappingURL=my-header.js.map
+
+/***/ }),
+
+/***/ 291:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AboutPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var AboutPage = (function () {
+    function AboutPage(navCtrl) {
+        this.navCtrl = navCtrl;
+    }
+    AboutPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-about',template:/*ion-inline-start:"C:\Users\user\Desktop\ionic_traxxeo\src\pages\about\about.html"*/`<ion-header>\n  <ion-navbar>\n    <ion-title>\n      About\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n</ion-content>\n`/*ion-inline-end:"C:\Users\user\Desktop\ionic_traxxeo\src\pages\about\about.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
+    ], AboutPage);
+    return AboutPage;
+}());
+
+//# sourceMappingURL=about.js.map
+
+/***/ }),
+
+/***/ 292:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ContactPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var ContactPage = (function () {
+    function ContactPage(navCtrl) {
+        this.navCtrl = navCtrl;
+    }
+    ContactPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-contact',template:/*ion-inline-start:"C:\Users\user\Desktop\ionic_traxxeo\src\pages\contact\contact.html"*/`<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Contact\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-list>\n    <ion-list-header>Follow us on Twitter</ion-list-header>\n    <ion-item>\n      <ion-icon name="ionic" item-start></ion-icon>\n      @ionicframework\n    </ion-item>\n  </ion-list>\n</ion-content>\n`/*ion-inline-end:"C:\Users\user\Desktop\ionic_traxxeo\src\pages\contact\contact.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
+    ], ContactPage);
+    return ContactPage;
+}());
+
+//# sourceMappingURL=contact.js.map
+
+/***/ }),
+
+/***/ 294:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RestProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/*
+  Generated class for the RestProvider provider.
+
+  See https://angular.io/guide/dependency-injection for more info on providers
+  and Angular DI.
+*/
+var RestProvider = (function () {
+    function RestProvider(http) {
+        this.http = http;
+        console.log('Hello RestProvider Provider');
+    }
+    RestProvider = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */]])
+    ], RestProvider);
+    return RestProvider;
+}());
+
+//# sourceMappingURL=rest.js.map
+
+/***/ }),
+
+/***/ 52:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ListPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_list_list__ = __webpack_require__(163);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(47);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+/**
+ * Generated class for the ListPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var ListPage = (function () {
+    function ListPage(navCtrl, listProvider, storage) {
+        this.navCtrl = navCtrl;
+        this.listProvider = listProvider;
+        this.storage = storage;
+        this.searchValue = "";
+        this.getItems();
+    }
+    ListPage.prototype.getItems = function () {
+        var _this = this;
+        var searchString;
+        if (this.searchValue != "") {
+            searchString = this.searchValue;
+        }
+        else
+            searchString = "";
+        this.listProvider.getList(searchString)
+            .then(function (data) {
+            _this.listItems = data;
+            console.log(_this.listItems);
+        });
+    };
+    ListPage.prototype.filterItems = function (event) {
+        if (event.keyCode == 13) {
+            this.ionViewWillEnter();
+        }
+    };
+    ListPage.prototype.selectItem = function (event_id, type, event_img, category_img) {
+        window.localStorage.setItem('selectedId', event_id);
+        window.localStorage.setItem('type', type);
+        window.localStorage.setItem('event_img', event_img);
+        window.localStorage.setItem('category_img', category_img);
+        console.log('Selected_item:', event_id);
+    };
+    ListPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad ListPage');
+    };
+    ListPage.prototype.ionViewWillEnter = function () {
+        console.log('ionViewDidLoad ListPage');
+        this.getItems();
+    };
+    ListPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-list',template:/*ion-inline-start:"C:\Users\user\Desktop\ionic_traxxeo\src\pages\list\list.html"*/`<!--\n  Generated template for the ListPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n <my-header></my-header>\n  <ion-navbar>\n    <ion-title>List of items</ion-title>\n  </ion-navbar>\n <ion-searchbar style="position:fixed" placeholder="Filter Items" [(ngModel)]="searchValue" \n  (keypress)="filterItems($event)"></ion-searchbar>\n</ion-header>\n\n<ion-content>\n\n  <ion-list  style="margin-top:50px" >\n   <button ion-item (click)="selectItem(item.event_id,item.type,item.event_img,item.category_img)" *ngFor="let item of listItems" >\n     <!-- <h2>{{item.first_name ? item.last_name : item.brand}}</h2>-->\n\n    <div class="row" *ngIf=" item.type == \'person\'" >\n      <div class="col-15">\n        <img width="40" height="40" src="assets/img/person_categories/{{ item.category_img }}.png " />\n      </div>\n      <div class="col-70">\n\n      <!--<div style=" font-family: \'Roboto\', sans-serif;\n        font-size:17px;\n        color:#00335E;\n        font-weight:500;">-->\n        <div>{{item.first_name}} {{ item.last_name}}</div>\n        <div>{{item.company_name}} {{ item.category_name}}</div>\n        <div>{{item.address}}</div>\n\n        <div><img style="margin-right:10px" onerror=""  width="15" height="15" src = "assets/img/events/{{ item.event_img }}.png" /> {{ item.date}} </div>\n\n      </div>\n    </div>\n\n    <div class="row" *ngIf=" item.type == \'vehicle\'" >\n      <div class="col-15">\n        <img width="40" height="40" src="assets/img/veh_categories/{{ item.category_img }}.png " />\n      </div>\n      <div class = "col-70">\n\n      <!--<div style=" font-family: \'Roboto\', sans-serif;\n        font-size:17px;\n        color:#00335E ;\n        font-weight:500;">-->\n        <div>{{item.name}}</div>\n        <div>{{item.brand}} {{ item.model}}</div>\n        <div>{{item.address}}</div>\n\n        <div><img style="margin-right:10px" onerror=""  width="15" height="15" src = "assets/img/events/{{ item.event_img }}.png" /> {{ item.date}} {{item.poi_name}} </div>\n\n      </div>\n    </div>\n\n    </button>\n  </ion-list>\n</ion-content>\n`/*ion-inline-end:"C:\Users\user\Desktop\ionic_traxxeo\src\pages\list\list.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1__providers_list_list__["a" /* ListProvider */], __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */]])
+    ], ListPage);
+    return ListPage;
+}());
+
+//# sourceMappingURL=list.js.map
+
+/***/ }),
+
+/***/ 53:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_login_login__ = __webpack_require__(164);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_tabs_tabs__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(18);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+/**
+ * Generated class for the LoginPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var LoginPage = (function () {
+    function LoginPage(navCtrl, navParams, loginProvider) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.loginProvider = loginProvider;
+    }
+    LoginPage.prototype.login = function () {
+        var _this = this;
+        console.log(this.username);
+        console.log(this.password);
+        this.loginProvider.login(this.username, this.password)
+            .then(function (data) {
+            console.log("Response", data.toString());
+            window.localStorage.setItem("userId", data.toString());
+            _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__pages_tabs_tabs__["a" /* TabsPage */]);
+        });
+    };
+    LoginPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad LoginPage');
+    };
+    LoginPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-login',template:/*ion-inline-start:"C:\Users\user\Desktop\ionic_traxxeo\src\pages\login\login.html"*/`<!--\n  Generated template for the LoginPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n <ion-navbar>\n   <ion-title>Traxxeo</ion-title>\n </ion-navbar>\n</ion-header>\n\n<ion-content padding [ngStyle]="{\'background-image\': \'url(assets/img/loginbckg.jpg)\'}">>\n <ion-list style="margin-top:150px">\n   <ion-item>\n     <ion-label floating>Username</ion-label>\n     <ion-input type="text" [(ngModel)]="username" placeholder="Username"></ion-input>\n   </ion-item>\n <ion-item>\n   <ion-label floating>Password</ion-label>\n     <ion-input type="password" [(ngModel)]="password" placeholder="Password"></ion-input>\n   </ion-item>\n </ion-list>\n\n <div padding>\n   <button ion-button block (click)="login()">Log In</button>\n </div>\n</ion-content>\n`/*ion-inline-end:"C:\Users\user\Desktop\ionic_traxxeo\src\pages\login\login.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["f" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1__providers_login_login__["a" /* LoginProvider */]])
+    ], LoginPage);
+    return LoginPage;
+}());
+
+//# sourceMappingURL=login.js.map
+
+/***/ }),
+
+/***/ 83:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__list_list__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__details_details__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__settings_settings__ = __webpack_require__(108);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var TabsPage = (function () {
+    function TabsPage() {
+        this.tab1Root = __WEBPACK_IMPORTED_MODULE_1__list_list__["a" /* ListPage */];
+        this.tab2Root = __WEBPACK_IMPORTED_MODULE_2__details_details__["a" /* DetailsPage */];
+        this.tab3Root = __WEBPACK_IMPORTED_MODULE_3__settings_settings__["a" /* SettingsPage */];
+    }
+    TabsPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\user\Desktop\ionic_traxxeo\src\pages\tabs\tabs.html"*/`<ion-tabs>\n  <ion-tab [root]="tab1Root" tabTitle="List" tabIcon="list"></ion-tab>\n  <ion-tab [root]="tab2Root" tabTitle="Details" tabIcon="information-circle"></ion-tab>\n  <ion-tab [root]="tab3Root" tabTitle="Settings" tabIcon="settings"></ion-tab>\n</ion-tabs>\n\n\n`/*ion-inline-end:"C:\Users\user\Desktop\ionic_traxxeo\src\pages\tabs\tabs.html"*/
+        }),
+        __metadata("design:paramtypes", [])
+    ], TabsPage);
+    return TabsPage;
+}());
+
+//# sourceMappingURL=tabs.js.map
+
+/***/ })
+
+},[209]);
+//# sourceMappingURL=main.js.map

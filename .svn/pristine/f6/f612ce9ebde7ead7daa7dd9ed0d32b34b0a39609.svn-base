@@ -1,0 +1,74 @@
+import { Component } from '@angular/core';
+import { ListProvider } from '../../providers/list/list';
+import { NavController } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
+
+/**
+ * Generated class for the ListPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+
+@IonicPage()
+@Component({
+  selector: 'page-list',
+  templateUrl: 'list.html',
+})
+export class ListPage {
+
+   listItems : any ;
+   searchValue : string ="";
+  constructor(public navCtrl: NavController, public listProvider: ListProvider, private storage : Storage) {
+
+  			this.getItems();
+
+  }
+
+
+
+    getItems() {
+    
+   
+     var searchString;
+     if (this.searchValue != ""){
+      searchString = this.searchValue;
+     }
+     else 
+     searchString = "";
+    this.listProvider.getList(searchString)
+    .then(data => {
+      this.listItems = data;
+      console.log(this.listItems);
+    });
+     
+  }
+  
+    filterItems(event){
+
+      if (event.keyCode == 13) {
+         this.ionViewWillEnter();
+        }
+    }
+  selectItem (event_id, type,event_img,category_img){
+
+       window.localStorage.setItem('selectedId', event_id);
+       window.localStorage.setItem('type', type);
+       window.localStorage.setItem('event_img', event_img);
+       window.localStorage.setItem('category_img', category_img);
+       console.log('Selected_item:', event_id);
+       
+        
+  }
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad ListPage');
+  }
+
+  ionViewWillEnter() {
+
+    console.log('ionViewDidLoad ListPage');
+      this.getItems();
+
+  }
+
+}

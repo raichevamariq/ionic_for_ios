@@ -1,0 +1,33 @@
+import { Component } from '@angular/core';
+import { ListProvider } from '../../providers/list/list';
+import { NavController } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
+
+@Component({
+  selector: 'page-home',
+  templateUrl: 'home.html'
+})
+export class HomePage {
+  
+
+  listItems : any ;
+
+  constructor(public navCtrl: NavController, public listProvider: ListProvider, private storage : Storage) {
+
+  			this.getItems();
+
+  }
+    getItems() {
+    
+   
+
+    this.listProvider.getList()
+    .then(data => {
+      this.listItems = data;
+      console.log(this.listItems);
+    });
+     console.log('Person : ', window.localStorage.getItem('person'));
+  }
+  
+
+}

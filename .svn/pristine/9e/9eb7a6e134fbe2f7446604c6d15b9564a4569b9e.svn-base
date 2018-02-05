@@ -1,0 +1,55 @@
+import { Component } from '@angular/core';
+import { DetailsProvider } from '../../providers/details/details';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import * as jQuery from 'jquery';
+/**
+ * Generated class for the DetailsPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+
+@IonicPage()
+@Component({
+  selector: 'page-details',
+  templateUrl: 'details.html',
+})
+export class DetailsPage {
+ item : any ;
+
+  constructor(public navCtrl: NavController, public detailsProvider: DetailsProvider) {
+
+  			this.getDetails();
+
+  }
+
+  	getUndefined(val) {
+  			return typeof val; ;
+  	}
+
+  	
+    getDetails() {
+    
+   
+
+    this.detailsProvider.getDetails()
+    .subscribe(data => {
+      this.item = data;
+      console.log("Response",this.item);
+      this.item.event_img = window.localStorage.getItem('event_img');
+      this.item.category_img = window.localStorage.getItem('category_img');
+      this.item.type = window.localStorage.getItem('type');
+  
+    });
+     console.log('Page component is ready : ', window.localStorage.getItem('person'));
+  }
+  
+
+  ionViewDidLoad() {
+
+    console.log('ionViewDidLoad DetailsPage');
+  		this.getDetails();
+
+  }
+
+}

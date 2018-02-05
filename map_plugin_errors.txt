@@ -1,0 +1,240 @@
+                                                           ^
+  symbol:   class OnCameraIdleListener
+  location: class GoogleMap
+C:\Users\user\Desktop\ionic_traxxeo\platforms\android\src\plugin\google\maps\PluginMap.java:1581: error: cannot find symbol
+                  map.setOnCameraIdleListener(new GoogleMap.OnCameraIdleListener() {
+                                                           ^
+  symbol:   class OnCameraIdleListener
+  location: class GoogleMap
+C:\Users\user\Desktop\ionic_traxxeo\platforms\android\src\plugin\google\maps\PluginMap.java:2107: error: cannot find symbol
+    String clusterId_markerId = marker.getTag() + "";
+                                      ^
+  symbol:   method getTag()
+  location: variable marker of type Marker
+C:\Users\user\Desktop\ionic_traxxeo\platforms\android\src\plugin\google\maps\PluginMap.java:2162: error: cannot find symbol
+    String markerTag = marker.getTag() + "";
+                             ^
+  symbol:   method getTag()
+  location: variable marker of type Marker
+C:\Users\user\Desktop\ionic_traxxeo\platforms\android\src\plugin\google\maps\PluginMap.java:2175: error: cannot find symbol
+    if ((marker.getTag() + "").startsWith("markercluster_")){
+               ^
+  symbol:   method getTag()
+  location: variable marker of type Marker
+C:\Users\user\Desktop\ionic_traxxeo\platforms\android\src\plugin\google\maps\PluginMap.java:2187: error: cannot find symbol
+    if ((marker.getTag() + "").startsWith("markercluster_")){
+               ^
+  symbol:   method getTag()
+  location: variable marker of type Marker
+C:\Users\user\Desktop\ionic_traxxeo\platforms\android\src\plugin\google\maps\PluginMap.java:2199: error: cannot find symbol
+    if ((marker.getTag() + "").startsWith("markercluster_")){
+               ^
+  symbol:   method getTag()
+  location: variable marker of type Marker
+C:\Users\user\Desktop\ionic_traxxeo\platforms\android\src\plugin\google\maps\PluginMap.java:2206: error: method does not override or implement a method from a supertype
+  @Override
+  ^
+C:\Users\user\Desktop\ionic_traxxeo\platforms\android\src\plugin\google\maps\PluginMap.java:2210: error: cannot find symbol
+    if ((marker.getTag() + "").startsWith("markercluster_")){
+               ^
+  symbol:   method getTag()
+  location: variable marker of type Marker
+C:\Users\user\Desktop\ionic_traxxeo\platforms\android\src\plugin\google\maps\PluginMap.java:2217: error: method does not override or implement a method from a supertype
+  @Override
+  ^
+C:\Users\user\Desktop\ionic_traxxeo\platforms\android\src\plugin\google\maps\PluginMap.java:2222: error: cannot find symbol
+      String markerTag = marker.getTag() + "";
+                               ^
+  symbol:   method getTag()
+  location: variable marker of type Marker
+C:\Users\user\Desktop\ionic_traxxeo\platforms\android\src\plugin\google\maps\PluginMap.java:2253: error: cannot find symbol
+    if (marker.getTag() == null) {
+              ^
+  symbol:   method getTag()
+  location: variable marker of type Marker
+C:\Users\user\Desktop\ionic_traxxeo\platforms\android\src\plugin\google\maps\PluginMap.java:2258: error: cannot find symbol
+    String markerTag = (String) marker.getTag();
+                                      ^
+  symbol:   method getTag()
+  location: variable marker of type Marker
+C:\Users\user\Desktop\ionic_traxxeo\platforms\android\src\plugin\google\maps\PluginMap.java:2267: error: cannot find symbol
+    if (marker.getTag() == null) {
+              ^
+  symbol:   method getTag()
+  location: variable marker of type Marker
+C:\Users\user\Desktop\ionic_traxxeo\platforms\android\src\plugin\google\maps\PluginMap.java:2272: error: cannot find symbol
+    String markerTag = (String) marker.getTag();
+                                      ^
+  symbol:   method getTag()
+  location: variable marker of type Marker
+C:\Users\user\Desktop\ionic_traxxeo\platforms\android\src\plugin\google\maps\PluginMap.java:2311: error: cannot find symbol
+    String overlayId = groundOverlay.getTag() + "";
+                                    ^
+  symbol:   method getTag()
+  location: variable groundOverlay of type GroundOverlay
+C:\Users\user\Desktop\ionic_traxxeo\platforms\android\src\plugin\google\maps\PluginMap.java:2490: error: method does not override or implement a method from a supertype
+  @Override
+  ^
+C:\Users\user\Desktop\ionic_traxxeo\platforms\android\src\plugin\google\maps\PluginMap.java:2573: error: method does not override or implement a method from a supertype
+  @Override
+  ^
+C:\Users\user\Desktop\ionic_traxxeo\platforms\android\src\plugin\google\maps\PluginMap.java:2583: error: method does not override or implement a method from a supertype
+  @Override
+  ^
+C:\Users\user\Desktop\ionic_traxxeo\platforms\android\src\plugin\google\maps\PluginMap.java:2593: error: method does not override or implement a method from a supertype
+  @Override
+  ^
+C:\Users\user\Desktop\ionic_traxxeo\platforms\android\src\plugin\google\maps\PluginMap.java:2602: error: method does not override or implement a method from a supertype
+  @Override
+  ^
+C:\Users\user\Desktop\ionic_traxxeo\platforms\android\src\plugin\google\maps\PluginMap.java:2608: error: cannot find symbol
+    this.isDragging = reason == REASON_GESTURE;
+                                ^
+  symbol:   variable REASON_GESTURE
+  location: class PluginMap
+C:\Users\user\Desktop\ionic_traxxeo\platforms\android\src\plugin\google\maps\PluginMap.java:2642: error: method does not override or implement a method from a supertype
+  @Override
+  ^
+C:\Users\user\Desktop\ionic_traxxeo\platforms\android\src\plugin\google\maps\PluginMap.java:2731: error: cannot find symbol
+              String markerTag = activeMarker.getTag() + "";
+                                             ^
+  symbol:   method getTag()
+  location: variable activeMarker of type Marker
+C:\Users\user\Desktop\ionic_traxxeo\platforms\android\src\plugin\google\maps\Environment.java:59: error: cannot find symbol
+      GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(cordova.getActivity());
+      ^
+  symbol:   variable GoogleApiAvailability
+  location: class Environment
+C:\Users\user\Desktop\ionic_traxxeo\platforms\android\src\plugin\google\maps\Environment.java:61: error: cannot find symbol
+      String errorMsg = GoogleApiAvailability.getInstance().getErrorString(checkGooglePlayServices);
+                        ^
+  symbol:   variable GoogleApiAvailability
+  location: class Environment
+C:\Users\user\Desktop\ionic_traxxeo\platforms\android\src\plugin\google\maps\PluginCircle.java:60: error: cannot find symbol
+    circleOptions.clickable(false);
+                 ^
+  symbol:   method clickable(boolean)
+  location: variable circleOptions of type CircleOptions
+C:\Users\user\Desktop\ionic_traxxeo\platforms\android\src\plugin\google\maps\PluginGroundOverlay.java:82: error: cannot find symbol
+    options.clickable(false);
+           ^
+  symbol:   method clickable(boolean)
+  location: variable options of type GroundOverlayOptions
+C:\Users\user\Desktop\ionic_traxxeo\platforms\android\src\plugin\google\maps\PluginGroundOverlay.java:103: error: cannot find symbol
+        groundOverlay.setTag("groundoverlay_" + idBase);
+                     ^
+  symbol:   method setTag(String)
+  location: variable groundOverlay of type GroundOverlay
+C:\Users\user\Desktop\ionic_traxxeo\platforms\android\src\plugin\google\maps\PluginGroundOverlay.java:160: error: cannot find symbol
+                  groundOverlay.setTag(null);
+                               ^
+  symbol:   method setTag(<null>)
+  location: variable groundOverlay of type GroundOverlay
+C:\Users\user\Desktop\ionic_traxxeo\platforms\android\src\plugin\google\maps\PluginLocationService.java:188: error: cannot find symbol
+          public void onConnectionFailed(@NonNull ConnectionResult result) {
+                                          ^
+  symbol: class NonNull
+C:\Users\user\Desktop\ionic_traxxeo\platforms\android\src\plugin\google\maps\PluginLocationService.java:390: error: cannot find symbol
+        .setMaxWaitTime(6000);
+        ^
+  symbol:   method setMaxWaitTime(int)
+  location: class LocationRequest
+C:\Users\user\Desktop\ionic_traxxeo\platforms\android\src\plugin\google\maps\PluginLocationService.java:394: error: cannot find symbol
+        .requestLocationUpdates(locationRequest, new LocationCallback() {
+                                                     ^
+  symbol:   class LocationCallback
+  location: class PluginLocationService
+C:\Users\user\Desktop\ionic_traxxeo\platforms\android\src\plugin\google\maps\PluginLocationService.java:393: error: cannot find symbol
+    LocationServices.getFusedLocationProviderClient(cordova.getActivity())
+                    ^
+  symbol:   method getFusedLocationProviderClient(Activity)
+  location: class LocationServices
+C:\Users\user\Desktop\ionic_traxxeo\platforms\android\src\plugin\google\maps\PluginMarker.java:158: error: cannot find symbol
+                marker.setTag(null);
+                      ^
+  symbol:   method setTag(<null>)
+  location: variable marker of type Marker
+C:\Users\user\Desktop\ionic_traxxeo\platforms\android\src\plugin\google\maps\PluginMarker.java:271: error: cannot find symbol
+      markerOptions.zIndex((float) opts.getDouble("zIndex"));
+                   ^
+  symbol:   method zIndex(float)
+  location: variable markerOptions of type MarkerOptions
+C:\Users\user\Desktop\ionic_traxxeo\platforms\android\src\plugin\google\maps\PluginMarker.java:297: error: cannot find symbol
+        marker.setTag(markerId);
+              ^
+  symbol:   method setTag(String)
+  location: variable marker of type Marker
+C:\Users\user\Desktop\ionic_traxxeo\platforms\android\src\plugin\google\maps\PluginMarker.java:832: error: cannot find symbol
+    if (marker == null || marker.getTag() == null) {
+                                ^
+  symbol:   method getTag()
+  location: variable marker of type Marker
+C:\Users\user\Desktop\ionic_traxxeo\platforms\android\src\plugin\google\maps\PluginMarker.java:839: error: cannot find symbol
+    String iconCacheKey = "marker_icon_" + marker.getTag();
+                                                 ^
+  symbol:   method getTag()
+  location: variable marker of type Marker
+C:\Users\user\Desktop\ionic_traxxeo\platforms\android\src\plugin\google\maps\PluginMarker.java:840: error: cannot find symbol
+    marker.setTag(null);
+          ^
+  symbol:   method setTag(<null>)
+  location: variable marker of type Marker
+C:\Users\user\Desktop\ionic_traxxeo\platforms\android\src\plugin\google\maps\PluginMarker.java:1032: error: cannot find symbol
+          String markerTag = marker.getTag() + "";
+                                   ^
+  symbol:   method getTag()
+  location: variable marker of type Marker
+C:\Users\user\Desktop\ionic_traxxeo\platforms\android\src\plugin\google\maps\PluginMarker.java:1065: error: cannot find symbol
+            if (marker == null || marker.getTag() == null) {
+                                        ^
+  symbol:   method getTag()
+  location: variable marker of type Marker
+C:\Users\user\Desktop\ionic_traxxeo\platforms\android\src\plugin\google\maps\PluginMarker.java:1087: error: cannot find symbol
+          if (bitmapDescriptor == null || marker == null || marker.getTag() == null) {
+                                                                  ^
+  symbol:   method getTag()
+  location: variable marker of type Marker
+C:\Users\user\Desktop\ionic_traxxeo\platforms\android\src\plugin\google\maps\PluginMarkerCluster.java:451: error: cannot find symbol
+            marker.setTag(clusterId_markerId);
+                  ^
+  symbol:   method setTag(String)
+  location: variable marker of type Marker
+C:\Users\user\Desktop\ionic_traxxeo\platforms\android\src\plugin\google\maps\PluginMarkerCluster.java:626: error: cannot find symbol
+          if (marker != null && marker.getTag() != null) {
+                                      ^
+  symbol:   method getTag()
+  location: variable marker of type Marker
+C:\Users\user\Desktop\ionic_traxxeo\platforms\android\src\plugin\google\maps\PluginPolygon.java:105: error: cannot find symbol
+        polygonOptions.clickable(false);
+                      ^
+  symbol:   method clickable(boolean)
+  location: variable polygonOptions of type PolygonOptions
+C:\Users\user\Desktop\ionic_traxxeo\platforms\android\src\plugin\google\maps\PluginPolyline.java:68: error: cannot find symbol
+    polylineOptions.clickable(false);
+                   ^
+  symbol:   method clickable(boolean)
+  location: variable polylineOptions of type PolylineOptions
+C:\Users\user\Desktop\ionic_traxxeo\platforms\android\src\plugin\google\maps\PluginTileOverlay.java:42: error: cannot find symbol
+      options.transparency((float)(1 - opts.getDouble("opacity")));
+             ^
+  symbol:   method transparency(float)
+  location: variable options of type TileOverlayOptions
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+89 errors
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':compileDebugJavaWithJavac'.
+> Compilation failed; see the compiler error output for details.
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+
+[ERROR] An error occurred while running cordova emulate android (exit code 1).
+
+
+C:\Users\user\Desktop\ionic_traxxeo>

@@ -1,0 +1,62 @@
+[
+    {
+        "outputFile": "C:\\Users\\user\\Desktop\\ionic_traxxeo\\platforms\\android\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 66,
+                    "endOffset": 117
+                },
+                "from": {
+                    "file": "C:\\Users\\user\\Desktop\\ionic_traxxeo\\platforms\\android\\res\\values\\version.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 122,
+                    "endColumn": 63,
+                    "endOffset": 181
+                },
+                "from": {
+                    "file": "C:\\Users\\user\\Desktop\\ionic_traxxeo\\platforms\\android\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 186,
+                    "endColumn": 44,
+                    "endOffset": 226
+                },
+                "from": {
+                    "file": "C:\\Users\\user\\Desktop\\ionic_traxxeo\\platforms\\android\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 44,
+                        "endOffset": 95
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 231,
+                    "endColumn": 58,
+                    "endOffset": 285
+                },
+                "from": {
+                    "file": "C:\\Users\\user\\Desktop\\ionic_traxxeo\\platforms\\android\\res\\values\\strings.xml"
+                }
+            }
+        ]
+    }
+]

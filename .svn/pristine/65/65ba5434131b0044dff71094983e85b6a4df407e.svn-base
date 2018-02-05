@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\user\Desktop\ionic_traxxeo\platforms\android\libs\google-play-services.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d71573c9c5ea98a8db47ad6ff993a63d492b3bfa">
+        <dex dex="C:\Users\user\Desktop\ionic_traxxeo\platforms\android\build\intermediates\pre-dexed\debug\google-play-services_c95f983980f528eada2f6e425ea39145efc2ad97.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\user\Desktop\ionic_traxxeo\platforms\android\build\intermediates\exploded-aar\org.apache.cordova\CordovaLib\6.2.3\release\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="2c139e3eabb40b123f0cf6810207106ab2b86120">
+        <dex dex="C:\Users\user\Desktop\ionic_traxxeo\platforms\android\build\intermediates\pre-dexed\release\CordovaLib-6.2.3-release_8cbb009708e30e0cfeaab9668f052c28c8610acf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\user\Desktop\ionic_traxxeo\platforms\android\build\intermediates\exploded-aar\org.apache.cordova\CordovaLib\6.2.3\debug\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="cd2af1a7180eb6427b58d868cd841d8212aca77e">
+        <dex dex="C:\Users\user\Desktop\ionic_traxxeo\platforms\android\build\intermediates\pre-dexed\debug\CordovaLib-6.2.3-debug_bf68a64db25f9c7fd988b4567f603e8b295726a3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\user\Desktop\ionic_traxxeo\platforms\android\libs\sqlite-connector.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="76169ab23a4f939925491c6fe186749da5a56ee9">
+        <dex dex="C:\Users\user\Desktop\ionic_traxxeo\platforms\android\build\intermediates\pre-dexed\debug\sqlite-connector_069ef80c1afb2b5a95f5daf5925e7771362bce28.jar" />
+    </item>
+
+</items>

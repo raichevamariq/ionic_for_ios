@@ -1,0 +1,38 @@
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Storage } from '@ionic/storage';
+
+
+
+@Injectable()
+export class DetailsProvider {
+
+
+
+constructor(public http: HttpClient,public storage : Storage) {
+  console.log('Hello RestServiceProvider Provider');
+}
+
+getDetails () {
+let type= window.localStorage.getItem("selectedType");
+let event_id = window.localStorage.getItem("selectedEventId");
+let url="";
+if(type == "person"){
+	url ="http://prodmobile.traxxeo.com/servlet/showPersonDetails?event_id="+event_id+"&userId=101001";
+}
+else {
+	
+	url = "http://prodmobile.traxxeo.com/servlet/showVehicleDetails?event_id="+event_id+"&userId=101001";
+}
+
+ 
+  return new Promise(resolve => {
+    this.http.get(url).subscribe(data => {
+      resolve(data);
+    }, err => {
+      console.log(err);
+    });
+  });
+}
+
+}

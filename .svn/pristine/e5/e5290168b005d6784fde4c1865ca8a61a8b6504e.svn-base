@@ -1,0 +1,44 @@
+import { Component } from '@angular/core';
+import { DetailsProvider } from '../../providers/details/details';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
+/**
+ * Generated class for the DetailsPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+
+@IonicPage()
+@Component({
+  selector: 'page-details',
+  templateUrl: 'details.html',
+})
+export class DetailsPage {
+ itemDetails : any ;
+
+  constructor(public navCtrl: NavController, public detailsProvider: DetailsProvider, private storage : Storage) {
+
+  			this.getDetails();
+
+  }
+
+
+    getDetails() {
+    
+   
+
+    this.detailsProvider.getDetails()
+    .then(data => {
+      this.itemDetails = data;
+      console.log(this.itemDetails);
+    });
+     console.log('Person : ', window.localStorage.getItem('person'));
+  }
+  
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad ListPage');
+  }
+
+}

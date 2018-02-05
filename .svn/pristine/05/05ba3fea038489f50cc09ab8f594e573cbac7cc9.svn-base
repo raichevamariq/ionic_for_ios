@@ -1,0 +1,61 @@
+<!--
+  Generated template for the DetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Details</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <div class="row" *ngIf=" item.type == 'person'" >
+
+      <div class="col" >
+    
+
+
+     <img width="50" height = "50" src="assets/img/person_categories/{{ item.category_img }}.png " />
+
+      </div>
+    <div class = "col-70">
+
+    <div style=" font-family: 'Roboto', sans-serif;
+      font-size:17px;
+      color:#00335E ;
+      font-weight:500;">
+    {{item.first_name}} {{ item.last_name}}</div>
+    <div>{{item.company_name}} {{ item.category_name}}</div>
+     <div>{{item.address}}</div>
+     	<div><img style="margin-right:10px" onerror="hide_img(this)"  width="15" height="15" src = "assets/img/events/ {{ item.event_img }}.png" /> {{ item.date}} </div>
+
+     </div>
+    </div>
+
+
+     <div class="row" *ngIf=" item.type == 'vehicle'" >
+    
+    <div class="col">
+    
+
+
+     <img width="50" height = "50" src="assets/img/veh_categories/{{ item.category_img }}.png " />
+
+    </div>
+    <div class = "col-70">
+
+     <div style=" font-family: 'Roboto', sans-serif;
+      font-size:17px;
+      color:#00335E ;
+      font-weight:500;">{{item.name}}</div>
+    <div>{{item.brand}} {{ item.model}}</div>
+     <div>{{item.address}}</div></div>
+    </div>
+
+</ion-content>

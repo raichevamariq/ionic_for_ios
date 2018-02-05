@@ -1,0 +1,78 @@
+import { Component } from '@angular/core';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ListProvider } from '../../providers/list/list';
+
+/**
+ * Generated class for the SettingsPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+
+@IonicPage()
+@Component({
+  selector: 'page-settings',
+  templateUrl: 'settings.html',
+})
+export class SettingsPage {
+
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+  }
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad SettingsPage');
+
+  }
+  // saveSettings(){
+
+
+  //   console.log(this.settings);
+  //   console.log(this.person.value);
+  //   console.log(this.object);
+  //   console.log(this.vehicle);
+
+  //  // var filter =JSON.parse(localStorage.getItem(localStorage.getItem("userId")));
+  // //  var person = filter.person;
+  //  // var object = filter.object;
+  //  // var vehicle = filter.vehicle;
+
+
+
+  //       //       window.localStorage.setItem(window.localStorage.getItem("userId"),JSON.stringify(filter));
+  //       //       window.location.href="vehicle_list.html";
+  //      // console.log('work');
+  //      // console.log("person" + person);
+  //      // console.log("object" + object);
+  //     // console.log("vehicle" + vehicle);
+
+  // }
+    checkedPerson : boolean = true;
+    checkedObject : boolean = true;
+    checkedVehicle : boolean = true;
+    saveSettings(e): void {
+      var isChecked = e.currentTarget.checked;
+      var person; var object; var vehicle;
+      if(this.checkedPerson === true){person = 1;}
+      else {person = 0;}
+      if(this.checkedObject === true){object = 1;}
+      else {object = 0;}
+      if(this.checkedVehicle === true){vehicle = 1;}
+      else {vehicle = 0;}
+      console.log(e.currentTarget);//undefined
+      console.log(this.checkedPerson);
+      console.log(this.checkedObject);
+      console.log(this.checkedVehicle);
+      console.log(person);
+      console.log(object);
+      console.log(vehicle);
+
+      var filter = {
+        person:person,
+        vehicle:vehicle,
+        object:object
+      };
+    window.localStorage.setItem(window.localStorage.getItem("userId"),JSON.stringify(filter));
+  }
+
+}

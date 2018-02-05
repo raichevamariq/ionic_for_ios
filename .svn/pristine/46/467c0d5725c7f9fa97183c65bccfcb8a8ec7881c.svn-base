@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list inset>
+    <ion-item *ngFor="let item of listItems">
+      <h2>{{item.name}}</h2>
+      
+    </ion-item>
+  </ion-list>
+</ion-content>

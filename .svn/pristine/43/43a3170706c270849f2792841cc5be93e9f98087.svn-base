@@ -1,0 +1,10 @@
+<ion-tabs>
+  <ion-tab [root]="tab1Root" tabTitle="List" tabIcon="list"></ion-tab>
+  <ion-tab [root]="tab2Root" tabTitle="Details" tabIcon="information-circle"></ion-tab>
+  <ion-tab [root]="tab3Root" tabTitle="Map" tabIcon="map"></ion-tab>
+  <ion-tab [root]="tab4Root" tabTitle="Settings" tabIcon="settings"></ion-tab>
+</ion-tabs>
+
+
+
+ionic cordova plugin add cordova-plugin-googlemaps --variable API_KEY_FOR_ANDROID=AIzaSyAYDgsP7cUqEBLbhK0nxjHaLkcVumkuDnI --variable API_KEY_FOR_IOS=AIzaSyAYDgsP7cUqEBLbhK0nxjHaLkcVumkuDnI

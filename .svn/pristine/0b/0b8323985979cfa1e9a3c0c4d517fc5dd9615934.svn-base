@@ -1,0 +1,11 @@
+<ion-header>
+
+<ion-navbar color="black">
+    <img width="auto" height="auto" src="assets/img/traxx_left2.png" style="float: left;">
+   <ion-datetime displayFormat="MMM DD, h:mm A" [(ngModel)]="myDate" class="img-settings" style="display: inline-block; width: 50%;"></ion-datetime>
+   <img width="auto" height="auto" src="assets/img/logout_img.png" style="float: right;">
+ </ion-navbar>
+
+</ion-header>
+
+<ion-nav [root]="rootPage"></ion-nav>
