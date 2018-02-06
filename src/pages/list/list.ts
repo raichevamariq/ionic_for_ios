@@ -80,7 +80,7 @@ export class ListPage {
   selectItem (event_id, type,event_img,category_img){
 
        window.localStorage.setItem('selectedId', event_id);
-       alert(localStorage.getItem('selectedId'));
+     
        window.localStorage.setItem('type', type);
        window.localStorage.setItem('event_img', event_img);
        window.localStorage.setItem('category_img', category_img);
@@ -93,7 +93,7 @@ export class ListPage {
 
   ionViewWillEnter() {
     console.log('ionViewWillEnter ListPage');
-    alert(window.localStorage.getItem("userId"));
+  
       this.getItems();
 
   }
