@@ -1,3 +1,33 @@
 page-login {
-  background: url("../../assets/img/loginbckg.jpg");
+  .login_backgr {
+    background : url('../../assets/img/login_bckg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    position: fixed;
+  }
+  .back-button.show-back-button {display: none !important;}
+
+  ion-list {
+    margin-top: 15% !important;
+    position: relative;
+  }
+  ion-item:first-child {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  ion-item:last-child {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  ion-item.item {
+    background-color: rgba(255, 255, 255, 1);
+    margin-bottom: 5px;
+
+  }
+  .login-btn {
+    background-color: #131f33;
+    margin-top: 13%;
+  }
+
 }

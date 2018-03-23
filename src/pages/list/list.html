@@ -6,20 +6,20 @@
 -->
 <ion-header>
  <my-header></my-header>
-  <ion-navbar>
-    <ion-title>List of items</ion-title>
-  </ion-navbar>
- <ion-searchbar style="position:fixed" placeholder="Filter Items" [(ngModel)]="searchValue" 
+<ion-searchbar style="position:fixed" placeholder="Filter Items" [(ngModel)]="searchValue" 
   (keypress)="filterItems($event)"></ion-searchbar>
+
 </ion-header>
 
-<ion-content>
 
-  <ion-list  style="margin-top:50px" >
-   <button ion-item (click)="selectItem(item.event_id,item.type,item.event_img,item.category_img)" *ngFor="let item of listItems" >
+<ion-content  style="margin-top:50px;background-color:#194387">
+   
+<div *ngIf="loading"  style="margin:8px;background-color:#FFFFFF;height:85%;width:96%"><img src="assets/img/loading1.gif" /></div>
+  <ion-list  *ngIf="!loading" >
+   <button ion-item style="margin:8px;width:95%;border-radius:4px" (click)="selectItem(item.event_id,item.type,item.event_img,item.category_img,item.latitude,item.longitude,item.map_address)" *ngFor="let item of listItems" >
      <!-- <h2>{{item.first_name ? item.last_name : item.brand}}</h2>-->
 
-    <div class="row" *ngIf=" item.type == 'person'" >
+    <div class="row"  *ngIf=" item.type == 'person'" >
       <div class="col-15">
         <img width="40" height="40" src="assets/img/person_categories/{{ item.category_img }}.png " />
       </div>

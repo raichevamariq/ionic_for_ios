@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component,ViewChild, } from '@angular/core';
+import { IonicPage, NavController, NavParams,Tabs } from 'ionic-angular';
 import { ListProvider } from '../../providers/list/list';
 import { ListPage } from '../list/list';
+import { TabsPage } from '../tabs/tabs';
 // import { Storage } from '@ionic/storage';
 //
 
@@ -46,6 +47,8 @@ var person : number; var vehicle:number; var object:number;
       if(this.checkedVehicle === true){vehicle = 1;} else {vehicle = 0;}
 
 
+
+
       var filter = {
         "person": person,
         "vehicle": vehicle,
@@ -57,14 +60,34 @@ var person : number; var vehicle:number; var object:number;
       console.log("Filter Vehicle " + filter.vehicle);
 
 console.log("json",JSON.stringify(filter));
-    window.localStorage.setItem(window.localStorage.getItem("userId"),JSON.stringify(filter));
+    window.localStorage.
+    setItem(window.localStorage.getItem("userId"),JSON.stringify(filter));
 
+ 
+ 
+ // this.tabs.select(1);
+ this.navCtrl.parent.select(0);
 
-   this.navCtrl.push(ListPage);
 }
 ionViewWillEnter() {
   console.log('ionViewWillEnter SettingsPage');
+  let vehicle = JSON.parse(localStorage.getItem(localStorage.getItem("userId"))).vehicle;
+  let person = JSON.parse(localStorage.getItem(localStorage.getItem("userId"))).person;
+  let object = JSON.parse(localStorage.getItem(localStorage.getItem("userId"))).object;
 
+
+  if (vehicle == 0 )
+  this.checkedVehicle = false ;
+  else if (vehicle ==1) 
+  this.checkedVehicle = true ;
+  if (person == 0 )
+  this.checkedPerson = false ;
+  else if (person ==1) 
+  this.checkedPerson = true ;
+if (object == 0 )
+  this.checkedObject = false ;
+  else if (object ==1) 
+  this.checkedObject = true ;
 
 } 
 }

@@ -53,7 +53,7 @@ export class DetailsPage {
       console.log("Response",this.item);
       this.item.event_img = window.localStorage.getItem('event_img');
       this.item.category_img = window.localStorage.getItem('category_img');
-      this.item.type = window.localStorage.getItem('type');
+      this.item.type = window.localStorage.getItem('selectedType');
   
     });
      console.log('Page component is ready : ', window.localStorage.getItem('person'));

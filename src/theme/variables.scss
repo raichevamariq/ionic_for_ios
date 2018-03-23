@@ -41,12 +41,22 @@ $colors: (
   dark:       #222
 );
 
-
+.card{
+margin-top:6px;
+background-color:#FFFFFF;
+border-radius:4px;
+opacity:100%;
+padding:5px;
+}
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
 
-
+.toolbar-background, .tabs-md .tabbar {
+  background-color: black !important;
+}
+.tabs-md .tab-button[aria-selected="true"],
+.tabs-md .tab-button[aria-selected=true] .tab-button-icon  {color: white !important;}
 
 
 // App Material Design Variables

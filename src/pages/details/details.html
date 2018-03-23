@@ -12,13 +12,13 @@
 
 </ion-header> -->
 
-<ion-content padding>
+<ion-header>
  <my-header></my-header>
-    <ion-navbar padding>
-        <ion-title style="margin-top: 5%;">Details</ion-title>
-      </ion-navbar>
+   </ion-header>
+       <ion-content style="background-color:#194387"  >
 
- <div class="row" *ngIf=" selectedItem!='' &&  item?.type == 'person' " >
+
+ <div class="row" style="height:96%;width:95%;background-color:#FFFFFF; ;margin:8px;border-radius:4px"*ngIf=" selectedItem!='' &&  item?.type == 'person' " >
 
     <div class="row">
       <div class="col-15 col-img" >
@@ -62,8 +62,8 @@
       </div>
     </div>
   </div>
-
-  <div class="row" *ngIf=" selectedItem!='' &&  item?.type  == 'vehicle'" >
+ 
+  <div class="row" style=" height:96%;width:95%;background-color:#FFFFFF; ;margin:8px;border-radius:4px" *ngIf=" selectedItem!='' &&  item?.type  == 'vehicle'" >
     <div class="row">
       <div class="col-15 col-img">
         <img width="40" height="40" src="assets/img/veh_categories/{{ item?.category_img }}.png " />
@@ -74,7 +74,8 @@
         font-size:17px;
         color:#00335E ;
         font-weight:500;">-->
-      <div id="heading">{{item?.name}}</div>
+      <div id="heading">{{item?.category_name}} {{ item?.company_number }}
+ {{ item?.numberplate }}</div>
       <div id="blueText">{{item?.brand}} {{ item?.model}}</div>
       <div id="grayText">{{item?.address}}</div>
 

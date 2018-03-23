@@ -20,7 +20,7 @@ import { SettingsPage } from '../pages/settings/settings';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-//import { GoogleMaps } from '@ionic-native/google-maps';
+import { GoogleMaps } from '@ionic-native/google-maps';
 import { RestProvider } from '../providers/rest/rest';
 import { ListProvider } from '../providers/list/list';
 import { DetailsProvider } from '../providers/details/details';
@@ -36,8 +36,8 @@ import { Network } from '@ionic-native/network';
     ListPage,
     DetailsPage,
     SettingsPage,
-    LoginPage
-    //MapPage
+    LoginPage,
+    MapPage
 
   ],
   imports: [
@@ -56,8 +56,8 @@ import { Network } from '@ionic-native/network';
     ListPage,
     DetailsPage,
     SettingsPage,
-    LoginPage
-   // MapPage
+    LoginPage,
+    MapPage
  
   ],
   providers: [
@@ -68,7 +68,7 @@ import { Network } from '@ionic-native/network';
     ListProvider,
     DetailsProvider,
     LoginProvider,
-   // GoogleMaps,
+    GoogleMaps,
     Network
   ]
 })

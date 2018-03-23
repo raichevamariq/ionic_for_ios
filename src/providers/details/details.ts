@@ -15,7 +15,7 @@ constructor(public http: HttpClient,public storage : Storage) {
 }
 
 getDetails () {
-let type= window.localStorage.getItem("type");
+let type= window.localStorage.getItem("selectedType");
 let event_id = window.localStorage.getItem("selectedId");
 let url="";
 if(type == "person"){

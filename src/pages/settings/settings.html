@@ -1,17 +1,18 @@
+settings.html
+
 <!--
   Generated template for the SettingsPage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-
-<ion-content padding>
+<ion-header>
  <my-header></my-header>
-  <ion-navbar padding>
-    <ion-title>Settings</ion-title>
-  </ion-navbar>
+   </ion-header>
+       <ion-content style="background-color:#194387"  >
 
-  <ion-list >
+<div  style="height:96%; width:95%;background-color:#FFFFFF; ;margin:8px;border-radius:4px">
+  <ion-list>
     <ion-item>
       <ion-thumbnail>
           <ion-img width="auto" height="auto" class="img-settings" src="assets/img/user.png"></ion-img>
@@ -32,5 +33,6 @@
 
   </ion-list>
 
-  <button small full color="default" (click)="gotoListPage()" name="ListPage" >Apply Settings</button>
+  <button ion-button medium  color="light" style="display:block;margin:auto" (click)="gotoListPage()" name="ListPage" >Apply Settings</button>
+  </div>
 </ion-content>

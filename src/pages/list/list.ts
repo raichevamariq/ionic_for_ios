@@ -1,5 +1,5 @@
 import { Subscription } from 'rxjs/Subscription';
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { ListProvider } from '../../providers/list/list';
 import { NavController, IonicPage, ToastController  } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
@@ -18,7 +18,7 @@ import { Network } from '@ionic-native/network';
   templateUrl: 'list.html',
 })
 export class ListPage {
-
+   loading :boolean = true ; 
   listItems: any ;
   searchValue: string ="";
 
@@ -57,6 +57,7 @@ export class ListPage {
 
   getItems() {
     var searchString;
+
     if (this.searchValue != ""){
       searchString = this.searchValue.toUpperCase();
     }
@@ -64,8 +65,19 @@ export class ListPage {
      searchString = "";
     this.listProvider.getList(searchString)
       .then(data => {
+
         this.listItems = data;
+         this.loading= false;
       console.log(this.listItems);
+      console.log(this.listItems[0]);
+    window.localStorage.setItem('selectedId', this.listItems[0].event_id);
+    
+         window.localStorage.setItem('selectedType', this.listItems[0].type);
+       window.localStorage.setItem('latitude', this.listItems[0].latitude);
+       window.localStorage.setItem('longitude', this.listItems[0].longitude);
+       window.localStorage.setItem('map_address', this.listItems[0].map_address);
+       window.localStorage.setItem('event_img', this.listItems[0].event_img);
+       window.localStorage.setItem('category_img', this.listItems[0].category_img);
     });
 
   }
@@ -77,11 +89,13 @@ export class ListPage {
     }
   }
 
-  selectItem (event_id, type,event_img,category_img){
-
+  selectItem (event_id, type,event_img,category_img,ltd,lng,address){
+        
        window.localStorage.setItem('selectedId', event_id);
-     
-       window.localStorage.setItem('type', type);
+         window.localStorage.setItem('selectedType', type);
+       window.localStorage.setItem('latitude', ltd);
+       window.localStorage.setItem('longitude', lng);
+       window.localStorage.setItem('map_address', address);
        window.localStorage.setItem('event_img', event_img);
        window.localStorage.setItem('category_img', category_img);
        console.log('Selected_item:', event_id);
@@ -92,7 +106,9 @@ export class ListPage {
   }
 
   ionViewWillEnter() {
+   this.loading = true;
     console.log('ionViewWillEnter ListPage');
+
   
       this.getItems();
 
